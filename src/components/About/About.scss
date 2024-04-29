@@ -1,0 +1,96 @@
+.about{
+    background: linear-gradient(180deg, #0C0C1D, #111132);
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    position: relative;
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+       .textWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:1rem;
+        height: 100%;
+
+            .titleContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .title{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    p{
+                        font-size: 40px;
+                        font-weight: 100;
+                        letter-spacing: 2px;
+                    }
+                    h1{
+                        font-size: 96px;
+                        font-weight: 100;
+                    }
+                    b{
+                        font-weight: 500;
+                    }
+                }
+            }
+            .textContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        
+                h6{
+                    font-size: 24px;
+                }
+                p{
+                    font-size: 20px;
+                    font-weight: 100;
+                    letter-spacing: 2px;
+                    width: 80%;
+                    text-align: center;
+                    line-height: 2rem;
+                }
+            }
+            .cta{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin-top: 2rem;
+                button{
+                    padding: 20px;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    color: white;
+                    margin-right: 20px;
+                    cursor: pointer;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+                .primary-cta{
+                    background-color: white;
+                    color: black;
+                } 
+            }
+        }
+        img{
+            width: 100px;
+            align-self: center;
+            padding: 2rem;
+        }
+        .slidingTextContainer{
+            position: absolute;
+            font-size: 50vh;
+            bottom: -1.5rem;
+            white-space: nowrap;
+            color: rgba($color: #fff, $alpha: 0.07);
+            width: 50%;
+            font-weight: bold;
+        } 
+    }
+    
+}

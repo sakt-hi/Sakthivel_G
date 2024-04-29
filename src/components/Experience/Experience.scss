@@ -1,0 +1,121 @@
+.expWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    .expTitle{
+        flex-basis: 50%;
+        padding: 8%;
+
+        h1{
+            font-size: 60px;
+        }
+
+        p{  
+            margin-top: 1rem;
+            font-weight: 100;
+            letter-spacing: 2px;
+            line-height: 30px;
+        }
+    }
+    .experience{
+        position: relative;
+        color: #FFFFFF;
+        flex-basis: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .container{
+            padding: 20px 50px;
+            position: relative;
+            width: 100%;
+            img{
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                left: -20px;
+                top:40px;
+                z-index: 10;
+                padding: 6px;
+                background-color: rgba($color: #555562 , $alpha: 1);
+            }
+            .textBox{
+                padding: 20px 30px;
+                background-color: rgba($color: #FFFFFF, $alpha: 0.2);
+                position: relative;
+                border-radius: 6px;
+                font-size: 16px;
+                h2{
+                    font-weight: 500;
+                }
+                h4{
+                    color: hsl(240,47%,75%);
+                    margin-top: 10px;
+                    font-size: 18px;
+                }
+                small{
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    font-weight: 200;
+                }
+                p{
+                    color: rgba($color: #FFFFFF, $alpha: 0.7);
+                }
+                .leftArrow{
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    top: 28px;
+                    z-index: 1;
+                    border-top: 15px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    border-right: 15px solid rgba($color: #FFFFFF, $alpha: 0.2);
+                    left: -15px;
+                }
+            }
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba($color: #FFFFFF, $alpha: 0.2),rgba($color: #FFFFFF, $alpha: 0.1));
+            top: 0;
+            margin-left: -3px;
+            z-index: -1;
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .experience{
+        margin: 50px auto;
+    
+        &::after{
+            left: 31px;
+        }
+
+        .container{
+            width: 90%;
+            padding-left: 40px;
+            padding-right: 25px;
+            left: 8%;
+            .leftArrow{
+                border-right: 15px solid #FFFFFF;
+                border-left: 0;
+                left: -15px;
+            }
+        }
+        .textBox{
+            font-size: 13px;
+
+            small{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}
