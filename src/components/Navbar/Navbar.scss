@@ -16,10 +16,18 @@
         .social-links{
             display: flex;
             gap:20px;
+            align-items: center;
 
             img{
-                width: 18px;
-                height: 18px;
+                width: 22px;
+                height: 22px;
+            }
+            a{
+                opacity: 0.5;
+                transition: 300ms all ease-out;
+                &:hover{
+                    opacity: 1;
+                }
             }
         }
     }

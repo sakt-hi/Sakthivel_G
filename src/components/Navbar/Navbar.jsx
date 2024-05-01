@@ -15,17 +15,14 @@ const Navbar = () => {
           Sakthivel G
         </motion.span>
         <div className="social-links">
-          <a href="#">
-            <img src="/linkedin.png" alt="" />
+          <a href="mailto:sakthivel.ganesan@hotmail.com" target='_blank'>
+              <img src="/email.png" className='mail' alt="" />
           </a>
-          <a href="#">
-            <img src="/github.png" alt="" />
+          <a href="https://www.linkedin.com/in/sakthivel-g/" target='_blank'>
+            <img src="/linkedin_white.png" alt="" />
           </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/instagram.png" alt="" />
+          <a href="https://github.com/sakt-hi" target='_blank'>
+            <img src="/github_white.png" className='github' alt="" />
           </a>
         </div>
       </div>

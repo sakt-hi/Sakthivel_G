@@ -4,8 +4,8 @@ import Experience from './components/Experience/Experience'
 import HeroBanner from './components/HeroBanner/HeroBanner'
 import Navbar from './components/Navbar/Navbar'
 import Parallax from './components/Parallax/Parallax'
+import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
-import SkillsExperience from './components/SkillsExperience/SkillsExperience'
 
 function App() {
 
@@ -28,9 +28,7 @@ function App() {
         <section id='Projects'>
           <Parallax type="projects" />
         </section>
-        <section>Project1</section>
-        <section>Project2</section>
-        <section>Project3</section>
+        <Projects />
         <section id='Contact'>Contact</section>
       </div>
     </>
