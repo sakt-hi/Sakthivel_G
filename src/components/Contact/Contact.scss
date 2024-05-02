@@ -1,0 +1,117 @@
+@import "../../App.scss";
+
+
+.contact{
+    height: 100%;
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    overflow: hidden;
+    @include mobile{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .textContainer{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        @include mobile{
+            gap: 20px;
+            justify-content: flex-end;
+        }
+
+        h1{
+            font-size: 72px;
+            line-height: 60px;
+            @include mobile{
+                font-size: 48px;
+                text-align: center;
+            }
+        }
+
+        span{
+            font-weight: 300;
+        }
+
+        .conItem{
+            @include mobile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h2{
+                    font-size: 16px;
+                    color: orange;
+                }
+            }
+        }
+    }
+
+    .formContainer{
+        flex:1;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include mobile{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .phoneSvg{
+            stroke: orange;
+            position: absolute;
+            margin: auto;
+            z-index: -1;
+            @include mobile{
+                scale: 0.5;
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 80%;
+            @include mobile{
+                width: 75%;
+            }
+
+            input,textarea{
+                padding: 20px;
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+                
+            }
+
+            textarea{
+                @include mobile{
+                    height: 120px;
+                }
+            }
+
+            input::placeholder,textarea::placeholder{
+                font-size: 16px;
+            }
+
+            button{
+                padding: 20px;
+                border: none;
+                background-color: orange;
+                cursor: pointer;
+                font-weight: 500;
+                border-radius: 6px;
+                font-size: 18px;
+                @include mobile{
+                    padding: 16px 20px;
+                }
+            }
+        }
+    }
+}

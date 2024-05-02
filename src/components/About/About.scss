@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .about{
     background: linear-gradient(180deg, #0C0C1D, #111132);
     height: calc(100vh - 100px);
@@ -32,6 +34,9 @@
                     h1{
                         font-size: 96px;
                         font-weight: 100;
+                        @include mobile{
+                            font-size: 72px;
+                        }
                     }
                     b{
                         font-weight: 500;
@@ -60,6 +65,11 @@
                 width: 100%;
                 justify-content: center;
                 margin-top: 2rem;
+                @include mobile{
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1.5rem;
+                }
                 button{
                     padding: 20px;
                     border: 1px solid white;
@@ -70,6 +80,10 @@
                     cursor: pointer;
                     font-weight: 400;
                     font-size: 16px;
+                    @include mobile{
+                        width: 75%;
+                        margin-right: 0;
+                    }
                 }
                 .primary-cta{
                     background-color: white;

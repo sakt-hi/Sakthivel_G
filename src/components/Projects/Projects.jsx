@@ -8,7 +8,7 @@ const projectItems = [
         id:1,
         title:"ChatGPT Clone",
         img:"/chatgpt_clone_mockup.png",
-        desc:"The project aimed to emulate OpenAI's GPT-3.5, crafting a flexible conversational AI adept at comprehending and producing human-like text. Through sophisticated natural language processing methods, our ChatGPT Clone aims to interact with users, provide aid, and generate pertinent responses spanning diverse subjects.",
+        desc:"This project seeks to replicate OpenAI's GPT-3.5, creating a conversational AI capable of understanding and generating human-like text across various topics using advanced natural language processing techniques.",
         link:"https://chatgpt-clone-sakthi.netlify.app/",
         repo:"https://github.com/sakt-hi/ChatGPT_Clone"
     },

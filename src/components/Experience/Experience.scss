@@ -1,15 +1,30 @@
+@import "../../App.scss";
+
 .expWrapper{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
     overflow: hidden;
+    @include mobile{
+        flex-direction: column;
+    }
     .expTitle{
         flex-basis: 50%;
         padding: 8%;
-
+        
+        @include mobile{
+            padding-top: 10%;
+            padding-bottom: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
         h1{
             font-size: 60px;
+            @include mobile{
+                font-size: 40px;
+            }
         }
 
         p{  
@@ -17,6 +32,9 @@
             font-weight: 100;
             letter-spacing: 2px;
             line-height: 30px;
+            @include mobile{
+                display: none;
+            }
         }
     }
     .experience{
@@ -27,6 +45,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @include mobile{
+            margin: 0;
+        }
         .container{
             padding: 20px 50px;
             position: relative;

@@ -1,3 +1,5 @@
+@import "../../App.scss"; 
+
 .projects{
     position: relative;
 
@@ -9,6 +11,10 @@
         text-align: center;
         color: orange;
         font-size: 36px;
+        @include mobile{
+            font-size: 20px;
+            padding-top: 84px;
+        }
 
         .progressBar{
             height: 8px;
@@ -30,6 +36,12 @@
             align-items: center;
             justify-content: center;
             gap: 3rem;
+            @include mobile{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+            }
 
             .imageContainer{
                 flex: 1;
@@ -37,10 +49,19 @@
                 display: flex;
                 justify-content: end;
                 padding-top: 10vh;
+                @include mobile{
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: end;
+                    align-items: center;
+                }
                 img{
                     width: 70%;
                     object-fit: fill;
                     border-radius: 10px;
+                    @include mobile{
+                        height: 60%;
+                    }
                 }
             }
 
@@ -52,16 +73,34 @@
                 justify-content: space-between;
                 gap: 1rem;
                 padding-top: 10vh;
+                    
+                @include mobile{
+                    width: 70%;
+                    padding: 2vh 0;
+                    justify-content: center;
+                    
+                }
 
                 h2{
                     font-size: 36px;
+                    display: flex;
+                    @include mobile{
+                        width: auto;
+                    }
                 }
 
                 p{
                     font-weight: 200;
                     width: 75%;
                     margin-bottom: 1rem;
+                    @include mobile{
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        white-space: normal; 
+                        overflow: hidden;
+                    }
                 }
+                
 
                 .btnContainer{
                     display: flex;
