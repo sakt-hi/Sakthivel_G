@@ -11,7 +11,9 @@
     gap: 50px;
     overflow: hidden;
     @include mobile{
+        display: flex;
         flex-direction: column;
+        justify-content: start;
         gap: 30px;
     }
 
@@ -21,16 +23,20 @@
         flex-direction: column;
         gap: 40px;
         @include mobile{
+            flex: 0;
             gap: 20px;
-            justify-content: flex-end;
+            justify-content: flex-start;
+            text-align: left;
         }
 
         h1{
             font-size: 72px;
             line-height: 60px;
             @include mobile{
-                font-size: 48px;
+                font-size: 24px;
                 text-align: center;
+                line-height: 40px;
+                margin-top: 20px;
             }
         }
 
@@ -42,10 +48,43 @@
             @include mobile{
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: start;
+                padding: 0 40px;
                 h2{
                     font-size: 16px;
-                    color: orange;
+                }
+            }
+            .social-links{
+                display: flex;
+                gap:20px;
+                align-items: center;
+                margin-top: 6px;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+                .mail{
+                    width: 18px;
+                    height: 18px;
+                }
+                .phone, .home{
+                    width: 16px;
+                    height: 16px;
+                }
+                a{
+                    opacity: 0.5;
+                    transition: 300ms all ease-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    gap: 5px;
+                    &:hover{
+                        opacity: 1;
+                    }
+                    span{
+                        font-size: 18px;
+                        line-height: 1;  
+                    }
                 }
             }
         }
@@ -69,6 +108,7 @@
             z-index: -1;
             @include mobile{
                 scale: 0.5;
+                bottom: 3rem;
             }
         }
 
@@ -87,17 +127,23 @@
                 border: 1px solid white;
                 color: white;
                 border-radius: 5px;
+                @include mobile{
+                    padding: 10px;
+                }
                 
             }
 
             textarea{
                 @include mobile{
-                    height: 120px;
+                    height: 90px;
                 }
             }
 
             input::placeholder,textarea::placeholder{
                 font-size: 16px;
+                @include mobile{
+                    font-size: 14px;
+                }
             }
 
             button{
@@ -109,7 +155,8 @@
                 border-radius: 6px;
                 font-size: 18px;
                 @include mobile{
-                    padding: 16px 20px;
+                    padding: 12px 18px;
+                    font-size: 16px;
                 }
             }
         }

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { contactVariants } from '../../helpers/motionTextVariants';
 import './Contact.scss';
 import { motion, useInView } from 'framer-motion';
@@ -9,47 +9,89 @@ import 'react-toastify/dist/ReactToastify.css';
 const Contact = () => {
     const ref = useRef();
     const formRef = useRef();
-    const [error, setError] = useState(false);
+    const [formErrors, setFormErrors] = useState({
+      name: false,
+      email: false,
+      message: false
+    });
     const [success, setSuccess] = useState(false);
     const inView = useInView(ref,{margin:"-100px"});
 
     const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs
+      e.preventDefault();
+  
+      // Get form fields
+      const formData = new FormData(formRef.current);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const message = formData.get("message");
+  
+      // Email validation using regular expression
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+          setFormErrors({ ...formErrors, email: true });
+          return; // Exit function early if email is invalid
+      } else {
+          setFormErrors({ ...formErrors, email: false });
+      }
+  
+      // Validate form fields
+      if (!name) {
+          setFormErrors({ ...formErrors, name: true });
+          return;
+      } else {
+          setFormErrors({ ...formErrors, name: false });
+      }
+  
+      if (!message) {
+          setFormErrors({ ...formErrors, message: true });
+          return;
+      } else {
+          setFormErrors({ ...formErrors, message: false });
+      }
+  
+      // If form is valid, send email
+      emailjs
           .sendForm('service_ay5lngr', 'template_3f1ezka', formRef.current, {
-            publicKey: 'hCSB1dSK195accZfA',
+              publicKey: 'hCSB1dSK195accZfA',
           })
           .then(
-            () => {
-              setSuccess(true);
-              formRef.current.reset();
-              toast.success('Submitted Successfully', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
-            },
-            (error) => {
-              setError(true);
-              toast.error('Something went wrong, please try again!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
-            },
+              () => {
+                  // Handle success
+                  setSuccess(true);
+                  showToast('Email sent successfully', 'success');
+                  formRef.current.reset(); // Optionally, reset the form after successful submission
+              },
+              (error) => {
+                  // Handle error
+                  console.error('Email sending failed:', error);
+                  showToast('Failed to send email. Please try again later.', 'error');
+              }
           );
+  };  
+      useEffect(() => {
+        // Handle success state
+        if (success) {
+            formRef.current.reset();
+            // Show success toast
+            showToast('Submitted Successfully', 'success');
+        }
+    }, [success]);
+
+    const showToast = (message, type) => {
+      toast(message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: type // 'success' or 'error'
+      });
     };
+  
   return (
     <motion.div ref={ref} className='contact' variants={contactVariants} initial="initial" whileInView="animate" >
         <ToastContainer
@@ -69,15 +111,43 @@ const Contact = () => {
             <motion.h1 variants={contactVariants}>Let's connect together</motion.h1>
             <motion.div className="conItem" variants={contactVariants}>
                 <h2>Email</h2>
-                <span>sakthivel.ganesan@hotmail.com</span>
+                <div className="social-links">
+                  <a href="mailto:sakthivel.ganesan@hotmail.com" target='_blank'>
+                      <img src="/email.png" className='mail' alt="" />
+                      <span>sakthivel.ganesan@hotmail.com</span>
+                  </a>
+                </div>
             </motion.div>
             <motion.div className="conItem" variants={contactVariants}>
                 <h2>Phone</h2>
-                <span>+91 9965397566</span>
+                <div className="social-links">
+                  <a href="tel:+919965397566" target='_blank'>
+                      <img src="/phone.png" className='phone' alt="" />
+                      <span>+91 9965397566</span>
+                  </a>
+                </div>
             </motion.div>
             <motion.div className="conItem" variants={contactVariants}>
                 <h2>Address</h2>
-                <span>Trichy, Tamil Nadu, India</span>
+                <div className="social-links">
+                  <a href="https://maps.app.goo.gl/UE5r5gCXshr59Lz87" target='_blank'>
+                      <img src="/home.png" className='home' alt="" />
+                      <span>Tiruchirappalli, Tamil Nadu, India</span>
+                  </a>
+                </div>
+            </motion.div>
+            <motion.div className="conItem" variants={contactVariants}>
+              <h2>Social Links</h2>
+              <div className="social-links">
+                <a href="https://www.linkedin.com/in/sakthivel-g/" target='_blank'>
+                  <img src="/linkedin_white.png" alt="" />
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/sakt-hi" target='_blank'>
+                  <img src="/github_white.png" className='github' alt="" />
+                  <span>Github</span>
+                </a>
+              </div>
             </motion.div>
         </motion.div>
         <div className="formContainer">
@@ -106,10 +176,13 @@ const Contact = () => {
                 </svg>
             </motion.div>
             <motion.form ref={formRef} onSubmit={sendEmail} initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:4,duration:1}}>
-                <input type="text" name="name" id="" placeholder='Name' required />
-                <input type="email" name="email" id="" placeholder='Email' required />
-                <textarea name="message" id="" rows={8} placeholder='Message'></textarea>
-                <button>Submit</button>
+              <input type="text" name="name" id="" placeholder='Name' required />
+              {formErrors.name && <p style={{ color: "lightGray" }}>Please enter your name</p>}
+              <input type="email" name="email" id="" placeholder='Email' required />
+              {formErrors.email && <p style={{ color: "red" }}>Please enter a valid email address</p>}
+              <textarea name="message" id="" style={{ outline: formErrors.message ? "1px solid red" : "" }} rows={8} placeholder='Message'></textarea>
+              {formErrors.message && <p style={{ color: "#FF6347"}}>Please enter your message</p>}
+              <button>Submit</button>
             </motion.form>
         </div>
     </motion.div>
