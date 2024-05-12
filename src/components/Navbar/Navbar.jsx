@@ -24,6 +24,9 @@ const Navbar = () => {
           <a href="https://github.com/sakt-hi" target='_blank'>
             <img src="/github_white.png" className='github' alt="" />
           </a>
+          <a href="https://dribbble.com/sakthi_svg" target='_blank'>
+            <img src="/dribbble_white.png" className='dribbble' alt="" />
+          </a>
         </div>
       </div>
     </div>

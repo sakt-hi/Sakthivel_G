@@ -56,11 +56,11 @@ const About = () => {
                     <motion.p variants={aboutVariants}>A design-focused <b>Front-End Developer</b>, merging visual finesse with technical expertise to craft captivating digital experiences.</motion.p>
                 </motion.div>
                 <motion.div variants={aboutVariants} className="cta">
-                    <motion.button className='primary-cta' whileHover={{backgroundColor:"hsl(240,47%,40%)", color:"white",borderColor:"hsl(240,47%,60%)"}}><motion.a href="#Projects">Take a Tour of My Work</motion.a></motion.button>
-                    <motion.button whileHover={{backgroundColor:"hsl(240,47%,16%)", borderColor:"hsl(240,47%,40%)"}}><motion.a href="#Contact">Contact Me</motion.a></motion.button>
+                    <motion.button className='primary-cta' whileHover={{backgroundColor:"hsl(240,47%,40%)", color:"white",borderColor:"hsl(240,47%,60%)"}}><motion.a href="https://drive.google.com/file/d/1JBi94T_76BxRStGX0nrDY4r7-NBOt82_/view?usp=sharing" target='_blank'>Check out Resume</motion.a></motion.button>
+                    <motion.button whileHover={{backgroundColor:"hsl(240,47%,16%)", borderColor:"hsl(240,47%,40%)"}}><motion.a href="#About">Browse portfolio</motion.a></motion.button>
                 </motion.div>
             </motion.div>
-            <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" />
+            <motion.a href="#About"><motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" /></motion.a>
             {/* <motion.div className="slidingTextContainer" variants={sliderVariants} initial="initial" animate="animate" >
                     Javascript React Angular
             </motion.div> */}

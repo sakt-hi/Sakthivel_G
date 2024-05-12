@@ -147,6 +147,10 @@ const Contact = () => {
                   <img src="/github_white.png" className='github' alt="" />
                   <span>Github</span>
                 </a>
+                <a href="https://dribbble.com/sakthi_svg" target='_blank'>
+                  <img src="/dribbble_white.png" className='github' alt="" />
+                  <span>Dribbble</span>
+                </a>
               </div>
             </motion.div>
         </motion.div>
