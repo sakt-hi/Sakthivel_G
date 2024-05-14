@@ -38,6 +38,18 @@
             font-size: 24px;
           }
         }
+        .navSocial{
+          position: absolute;
+          bottom: 10vh;
+          display: flex;
+          gap: 10px;
+          a{
+            font-size: 18px;
+            img{
+              width: 24px;
+            }
+          }
+        }
       }
     }
     button{

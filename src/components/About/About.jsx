@@ -57,7 +57,7 @@ const About = () => {
                 </motion.div>
                 <motion.div variants={aboutVariants} className="cta">
                     <motion.button className='primary-cta' whileHover={{backgroundColor:"hsl(240,47%,40%)", color:"white",borderColor:"hsl(240,47%,60%)"}}><motion.a href="https://drive.google.com/file/d/1JBi94T_76BxRStGX0nrDY4r7-NBOt82_/view?usp=sharing" target='_blank'>Check out Resume</motion.a></motion.button>
-                    <motion.button whileHover={{backgroundColor:"hsl(240,47%,16%)", borderColor:"hsl(240,47%,40%)"}}><motion.a href="#About">Browse portfolio</motion.a></motion.button>
+                    <motion.button whileHover={{backgroundColor:"hsl(240,47%,16%)", borderColor:"hsl(240,47%,40%)"}}><motion.a href="#Projects">Explore my works</motion.a></motion.button>
                 </motion.div>
             </motion.div>
             <motion.a href="#About"><motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" /></motion.a>

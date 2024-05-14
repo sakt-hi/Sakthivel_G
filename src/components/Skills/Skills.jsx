@@ -4,18 +4,19 @@ import { itemVariants, skillTextVariants, staggerVariants, textVariants } from '
 import { useRef } from 'react';
 
 const skills = [
-    {skill:"Figma", logo:"/figma.png"},
+    
     {skill:"HTML", logo:"/html.png"},
-    {skill:"CSS", logo:"/css.png"},
-    {skill:"Javascript", logo:"/javascript.png", style:{borderRadius:"30%"}},
-    {skill:"React", logo:"/react.png"},
-    {skill:"Angular", logo:"/angular.png"},
-    {skill:"Typescript", logo:"/typescript.png"},
-    {skill:"Git", logo:"/git.png"},
-    {skill:"Bootstrap", logo:"/bootstrap.png"},
+    { skill: "CSS", logo: "/css.png" },
     {skill:"Sass", logo:"/sass.png"},
-    {skill:"Tailwind CSS", logo:"/tailwindcss.png"},
-    {skill:"Next.js", logo:"/nextjs.png"},
+    {skill:"Bootstrap", logo:"/bootstrap.png"},
+    { skill: "Tailwind", logo: "/tailwindcss.png" },
+    {skill:"Javascript", logo:"/javascript.png", style:{borderRadius:"30%"}},
+    { skill: "React", logo: "/react.png" },
+    {skill:"Typescript", logo:"/typescript.png"},
+    {skill:"Angular", logo:"/angular.png"},
+    {skill:"Git", logo:"/git.png"},
+    {skill:"Figma", logo:"/figma.png"},
+    // {skill:"Next.js", logo:"/nextjs.png"},
 ]
 
 const Skills = () => {

@@ -59,14 +59,14 @@ const SingleProject = ({item}) =>{
 const Projects = () => {
 
     const ref = useRef()
-    const {scrollYProgress} = useScroll({target:ref,offset:["end end","start start"]})
+    const {scrollYProgress} = useScroll({target:ref,offset:["start start","end end"]})
     const  scaleX = useSpring(scrollYProgress,{
         stiffness:100,
         damping:30,
     })
 
   return (
-    <div className='projects' ref={ref}>
+    <div className='projects' ref={ref} id='Projects'>
         <div className="progress">
             <h1>Featured Works</h1>
             <motion.div style={{ scaleX }} className="progressBar"></motion.div>

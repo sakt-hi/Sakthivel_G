@@ -32,7 +32,7 @@ const Parallax = ({ type }) => {
         initial="initial"
         whileInView="animate"
       >
-        {type === "about" ? "Who I am?" : "What I've done?"}
+        {type === "about" ? "Discover more about me" : "My Projects"}
       </motion.h1>
       <motion.div className="mountains"></motion.div>
       <motion.div
