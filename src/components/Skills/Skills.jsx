@@ -5,17 +5,17 @@ import { useRef } from 'react';
 
 const skills = [
     
+    {skill:"Figma", logo:"/figma.png"},
+    {skill:"Javascript", logo:"/javascript.png", style:{borderRadius:"30%"}},
+    { skill: "React", logo: "/react.png" },
+    {skill:"Typescript", logo:"/typescript.png"},
+    { skill: "Angular", logo: "/angular.png" },
     {skill:"HTML", logo:"/html.png"},
     { skill: "CSS", logo: "/css.png" },
     {skill:"Sass", logo:"/sass.png"},
     {skill:"Bootstrap", logo:"/bootstrap.png"},
     { skill: "Tailwind", logo: "/tailwindcss.png" },
-    {skill:"Javascript", logo:"/javascript.png", style:{borderRadius:"30%"}},
-    { skill: "React", logo: "/react.png" },
-    {skill:"Typescript", logo:"/typescript.png"},
-    {skill:"Angular", logo:"/angular.png"},
     {skill:"Git", logo:"/git.png"},
-    {skill:"Figma", logo:"/figma.png"},
     // {skill:"Next.js", logo:"/nextjs.png"},
 ]
 
