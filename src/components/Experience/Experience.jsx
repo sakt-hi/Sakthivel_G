@@ -5,14 +5,14 @@ import { motion, useInView } from 'framer-motion';
 const experiences = [
     {
       title: "UI/UX Designer",
-      company: "Manomay InsurTech Pvt. Ltd.",
+      company: "Manomay Consultancy Services Pvt. Ltd.",
       location: "Hyderabad, Telangana, India",
       date: "August 2022 - Present",
       image: "/work.png"
     },
     {
       title: "Internship Trainee",
-      company: "Manomay InsurTech Pvt. Ltd.",
+      company: "Manomay Consultancy Services Pvt. Ltd.",
       location: "Hyderabad, Telangana, India",
       date: "March 2022 - August 2022",
       image: "/intern.png"

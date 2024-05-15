@@ -14,12 +14,17 @@ const Contact = () => {
       email: false,
       message: false
     });
-    const [success, setSuccess] = useState(false);
-    const inView = useInView(ref,{margin:"-100px"});
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [error, setError] = useState(false);
+  const inView = useInView(ref, { margin: "-100px" });
+  const [sendReq, setSendReq] = useState(false)
 
-    const sendEmail = (e) => {
-      e.preventDefault();
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setSendReq(true);
   
+    try {
       // Get form fields
       const formData = new FormData(formRef.current);
       const name = formData.get("name");
@@ -29,54 +34,55 @@ const Contact = () => {
       // Email validation using regular expression
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-          setFormErrors({ ...formErrors, email: true });
-          return; // Exit function early if email is invalid
+        setFormErrors({ ...formErrors, email: true });
+        return; // Exit function early if email is invalid
       } else {
-          setFormErrors({ ...formErrors, email: false });
+        setFormErrors({ ...formErrors, email: false });
       }
   
       // Validate form fields
       if (!name) {
-          setFormErrors({ ...formErrors, name: true });
-          return;
+        setFormErrors({ ...formErrors, name: true });
+        return;
       } else {
-          setFormErrors({ ...formErrors, name: false });
+        setFormErrors({ ...formErrors, name: false });
       }
   
       if (!message) {
-          setFormErrors({ ...formErrors, message: true });
-          return;
+        setFormErrors({ ...formErrors, message: true });
+        return;
       } else {
-          setFormErrors({ ...formErrors, message: false });
+        setFormErrors({ ...formErrors, message: false });
       }
   
       // If form is valid, send email
-      emailjs
-          .sendForm('service_ay5lngr', 'template_3f1ezka', formRef.current, {
-              publicKey: 'hCSB1dSK195accZfA',
-          })
-          .then(
-              () => {
-                  // Handle success
-                  setSuccess(true);
-                  showToast('Email sent successfully', 'success');
-                  formRef.current.reset(); // Optionally, reset the form after successful submission
-              },
-              (error) => {
-                  // Handle error
-                  console.error('Email sending failed:', error);
-                  showToast('Failed to send email. Please try again later.', 'error');
-              }
-          );
-  };  
-      useEffect(() => {
-        // Handle success state
-        if (success) {
-            formRef.current.reset();
-            // Show success toast
-            showToast('Submitted Successfully', 'success');
-        }
-    }, [success]);
+      await emailjs.sendForm('service_ay5lngr', 'template_3f1ezka', formRef.current, {
+        publicKey: 'hCSB1dSK195accZfA',
+      });
+  
+      // Handle success
+      setSuccess(true);
+      setSendReq(false);
+    } catch (error) {
+      // Handle error
+      console.error('Email sending failed:', error);
+      setFailed(true);
+      setSendReq(false);
+    }
+  };
+  
+  useEffect(() => {
+    // Handle success state
+    if (success) {
+      formRef.current.reset();
+      // Show success toast
+      showToast('Submitted Successfully', 'success');
+    } else if (failed) {
+      formRef.current.reset();
+      showToast('Failed to send email. Please try again later.', 'error');
+    }
+  }, [success, failed]);
+  
 
     const showToast = (message, type) => {
       toast(message, {
@@ -186,7 +192,7 @@ const Contact = () => {
               {formErrors.email && <p style={{ color: "red" }}>Please enter a valid email address</p>}
               <textarea name="message" id="" style={{ outline: formErrors.message ? "1px solid red" : "" }} rows={8} placeholder='Message'></textarea>
               {formErrors.message && <p style={{ color: "#FF6347"}}>Please enter your message</p>}
-              <button>Submit</button>
+              {sendReq ? <button><div class="loader"></div></button> : <button>Submit</button>}
             </motion.form>
         </div>
     </motion.div>

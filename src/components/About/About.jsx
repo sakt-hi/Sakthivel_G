@@ -60,7 +60,7 @@ const About = () => {
                     <motion.button whileHover={{backgroundColor:"hsl(240,47%,16%)", borderColor:"hsl(240,47%,40%)"}}><motion.a href="#Projects">Explore my works</motion.a></motion.button>
                 </motion.div>
             </motion.div>
-            <motion.a href="#About"><motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" /></motion.a>
+            <motion.a href="#Projects"><motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" /></motion.a>
             {/* <motion.div className="slidingTextContainer" variants={sliderVariants} initial="initial" animate="animate" >
                     Javascript React Angular
             </motion.div> */}
