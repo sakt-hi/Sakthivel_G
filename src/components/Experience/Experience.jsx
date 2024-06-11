@@ -4,7 +4,7 @@ import './Experience.scss';
 import { motion, useInView } from 'framer-motion';
 const experiences = [
     {
-      title: "UI/UX Designer",
+      title: "Software Engineer",
       company: "Manomay Consultancy Services Pvt. Ltd.",
       location: "Hyderabad, Telangana, India",
       date: "August 2022 - Present",
