@@ -6,11 +6,11 @@ import { aboutVariants } from '../../helpers/motionTextVariants'
 const projectItems = [
     {
         id:1,
-        title:"ChatGPT Clone",
-        img:"/chatgpt_clone_mockup.png",
-        desc:"This project seeks to replicate OpenAI's GPT-3.5, creating a conversational AI capable of understanding and generating human-like text across various topics using advanced natural language processing techniques.",
-        link:"https://chatgpt-clone-sakthi.netlify.app/",
-        repo:"https://github.com/sakt-hi/ChatGPT_Clone"
+        title:"FoodEase",
+        img:"/foodease_mockup.png",
+        desc:"FoodEase is a food delivery app designed to offer a seamless experience for browsing, ordering, and enjoying meals from a cloud kitchen. With user-friendly navigation and quick delivery, FoodEase ensures that your favorite dishes are just a tap away.",
+        link:"https://foodease.vercel.app/",
+        repo:"https://github.com/sakt-hi/foodease-frontend"
     },
     {
         id:2,
@@ -22,12 +22,28 @@ const projectItems = [
     },
     {
         id:3,
-        title:"Foodjun",
-        img:"/foodjun_mockup.png",
-        desc:"FoodJun, inspired by platforms like Swiggy, offers seamless ordering and delivery tracking. Designed to showcase my skills in app development and user experience, it ensures a delightful culinary journey.",
-        link:"https://foodjun.netlify.app/",
-        repo:"https://github.com/sakt-hi/foodjun"
-    }
+        title:"The Almost Final Countdown",
+        img:"/finalcountdown_mockup.png",
+        desc:"This Timer Countdown App is a demonstration of using useRef hook in React to manage multiple timers. The app provides four different timers - Easy, Medium, Hard, and Pros Only. Each timer counts down from a predefined duration and notifies the user upon completion.",
+        link:"https://timercountdown-useref.netlify.app/",
+        repo:"https://github.com/sakt-hi/TimerCountdown-useRef"
+    },
+    // {
+    //     id:3,
+    //     title:"ChatGPT Clone",
+    //     img:"/chatgpt_clone_mockup.png",
+    //     desc:"This project seeks to replicate OpenAI's GPT-3.5, creating a conversational AI capable of understanding and generating human-like text across various topics using advanced natural language processing techniques.",
+    //     link:"https://chatgpt-clone-sakthi.netlify.app/",
+    //     repo:"https://github.com/sakt-hi/ChatGPT_Clone"
+    // },
+    // {
+    //     id:4,
+    //     title:"Foodjun",
+    //     img:"/foodjun_mockup.png",
+    //     desc:"FoodJun, inspired by platforms like Swiggy, offers seamless ordering and delivery tracking. Designed to showcase my skills in app development and user experience, it ensures a delightful culinary journey.",
+    //     link:"https://foodjun.netlify.app/",
+    //     repo:"https://github.com/sakt-hi/foodjun"
+    // }
 
 ]
 
